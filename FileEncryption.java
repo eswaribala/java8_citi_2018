@@ -28,7 +28,7 @@ package com.citi.banking;
 			Random random = new Random();
 			random.nextBytes(salt);
 
-			PBEParameterSpec pbeParameterSpec = new PBEParameterSpec(salt, 100);
+			PBEParameterSpec pbeParameterSpec = new PBEParameterSpec(salt, 1000);
 			Cipher cipher = Cipher.getInstance("PBEWithMD5AndTripleDES");
 			cipher.init(Cipher.ENCRYPT_MODE, secretKey, pbeParameterSpec);
 			outFile.write(salt);

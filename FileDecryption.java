@@ -22,7 +22,7 @@ public class FileDecryption {
 		byte[] salt = new byte[8];
 		fis.read(salt);
 
-		PBEParameterSpec pbeParameterSpec = new PBEParameterSpec(salt, 100);
+		PBEParameterSpec pbeParameterSpec = new PBEParameterSpec(salt, 1000);
 
 		Cipher cipher = Cipher.getInstance("PBEWithMD5AndTripleDES");
 		cipher.init(Cipher.DECRYPT_MODE, secretKey, pbeParameterSpec);
